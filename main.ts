@@ -82,10 +82,10 @@ namespace shader {
 
     function shadeImage(target: Image, left: number, top: number, mask: Image, palette: Buffer) {
         if (!screenRowsBuffer || screenRowsBuffer.length < target.height) {
-            screenRowsBuffer = pins.createBuffer(target.height);
+            screenRowsBuffer = control.createBuffer(target.height);
         }
         if (!maskRowsBuffer || maskRowsBuffer.length < target.height) {
-            maskRowsBuffer = pins.createBuffer(mask.height);
+            maskRowsBuffer = control.createBuffer(mask.height);
         }
 
         let targetX = left | 0;
